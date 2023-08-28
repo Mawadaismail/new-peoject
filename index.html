@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website</title>
+    <link rel="stylesheet" href="Css/all.css">
+    <link rel="stylesheet" href="Css/all2.css">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header {
+    width: 100%;
+    height: 12vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header img {
+    width: 10%;
+    height: 90px;
+    margin-left: 10%;
+    margin-top: 5px;
+}
+
+.Links {
+    width: 50%;
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+
+.Links .link-i {
+    list-style-type: none;
+
+}
+
+.Links .link-i li {
+    display: inline-block;
+    padding: 10px;
+
+}
+
+.Links .link-i li a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #f75394;
+    letter-spacing: 1px;
+
+}
+
+.Links .link-i li .active::after {
+    content: "";
+    margin-top: 2px;
+    width: 100%;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    background-color: aliceblue;
+}
+
+.hover::after {
+    content: "";
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    width: 0;
+    left: 0;
+    background-color: aliceblue;
+    transition: 0.3s;
+}
+
+.hover:hover::after {
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.middle {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://st4.depositphotos.com/2297123/23722/i/450/depositphotos_237221802-stock-photo-futuristic-dance-club-neon-glowing.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.middle-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.middle .title1 {
+    text-transform: uppercase;
+    font-size: 56px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.middle .paragraph1 {
+    letter-spacing: 1px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f75394;
+    margin: 15px 0px;
+}
+
+.middle .middle-content {
+    width: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+.middle button {
+    width: 150px;
+    padding: 15px 0px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.middle .btn-get {
+    margin-right: 5px;
+    background-color: white;
+    color: #000;
+}
+
+.middle .btn-learn {
+    background-color: blue;
+    color: #fff;
+}
+
+.middle button:hover {
+    opacity: 0.6;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.title {
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 35px;
+    padding: 10px 0 0;
+}
+
+.line {
+    width: 4%;
+    height: 3px;
+    margin: 10px auto;
+    padding: 2px;
+    background-color: #f75394;
+}
+
+.container-items {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0;
+
+}
+
+.container-items .item {
+    position: absolute;
+    width: 25%;
+    height: 45vh;
+    border: 2px solid gray;
+    float: left;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+
+.necklace {
+    background-image: url(https://i.pinimg.com/564x/2a/12/5a/2a125afcb0633ee3c83954dd47c92b0b.jpg);
+    background-size: cover;
+
+}
+
+.rings {
+    background-image: url(https://i.pinimg.com/564x/d8/01/b3/d801b347fe812baa0f7c6bc902dcfd2b.jpg);
+    background-size: cover;
+    left: 65%;
+}
+
+.earing {
+    background-image: url(https://i.pinimg.com/564x/90/0b/92/900b92961dc78a67f9883a398c2fa7df.jpg);
+    background-size: cover;
+    left: 37.5%;
+}
+
+.item .item-overlay2 {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.item .item-overlay2:hover {
+    opacity: 1;
+}
+
+.item-content {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 80%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+}
+
+.item:hover .item-content {
+    opacity: 1;
+}
+
+.item-content h2 {
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: burlywood;
+    font-size: 30px;
+}
+
+.item-content p {
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 26px;
+}
+
+.item-content a {
+    background-color: #000;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    color: wheat;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.products {
+    width: 100%;
+    height: 100vh;
+    background-color: darkgray;
+    margin-top: 35%;
+}
+
+.product-content {
+    width: 80%;
+    margin-left: 15%;
+
+    padding: 0 50px;
+}
+
+#pro1 {
+    background-image: url(https://i.pinimg.com/564x/79/ab/fa/79abfaa5efd0e66414c7b7a82ee2f9d8.jpg);
+    background-size: cover;
+}
+
+#pro2 {
+    background-image: url(https://pbs.twimg.com/media/FwUrB0JWYAAMr_8?format=webp&name=900x900);
+    background-size: cover;
+}
+
+#pro3 {
+    background-image: url(https://i.pinimg.com/564x/fc/c7/cd/fcc7cdef06e42486c9b76faf4904afc2.jpg);
+    background-size: cover;
+}
+
+#pro4 {
+    background-image: url(https://i.pinimg.com/564x/ad/49/6b/ad496becfd224fd42e093ec7cfb8246b.jpg);
+    background-size: cover;
+}
+
+#pro5 {
+    background-image: url(https://i.pinimg.com/564x/62/be/2e/62be2e28794726671d8d6279902ead5c.jpg);
+    background-size: cover;
+}
+
+#pro6 {
+    background-image: url(https://i.pinimg.com/564x/ca/fd/b4/cafdb41d63d8d7b5143bbef2f2527c9e.jpg);
+    background-size: cover;
+}
+
+.prod {
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    margin-left: 40px;
+    margin-top: 12PX;
+    height: 40vh;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.prod .overlay2 {
+    background: rgba(0, 0, 0, 0.5);
+    height: 99%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    visibility: hidden;
+    transition: opacity 1s
+}
+
+.prod:hover .overlay2 {
+    opacity: 1;
+    visibility: visible
+}
+
+
+.prod .content-details {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.7s;
+}
+
+.prod:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+}
+
+.content-details h2 {
+
+    color: rgb(255, 239, 222);
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+
+}
+
+.content-details p {
+    color: lightsalmon;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+
+}
+
+
+.content-details a {
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 30px;
+
+}
+
+.offer {
+    margin-top: 150px;
+}
+
+.offer h1 {
+    font-size: 35px;
+
+}
+
+.offer-content {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+
+}
+
+.content {
+    width:30%;
+    height: 25vh;
+    border: 2px solid lavender;
+    padding-top: 20px;
+    padding-left: 18px;
+    display: inline-block;
+    position: relative;
+    margin: 12px 12px;
+}
+
+.content h2 {
+    margin-top: 10px;
+    font-size: 25px;
+    margin-left: 12%;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+
+.content p {
+    font-size: 20px;
+    padding: 6px;
+    margin-top: 13px;
+    color: lightgrey;
+}
+
+.content i {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    font-size: 25px;
+    color: #f75394;
+}
+
+.content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: #f75394;
+    transition: 0.7s;
+
+}
+
+.content:hover::after {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+
+.content:hover i {
+    color: #fff;
+    transition: color 1s;
+}
+
+.content:hover h2 {
+    color: white;
+    transition: color 0.5s;
+}
+
+.content:hover p {
+    color: white;
+    transition: color 0.5s;
+}
+
+.choose {
+    position: relative;
+    width: 100%;
+    background-image: url(https://img.freepik.com/free-photo/closeup-portrait-inspired-dreamy-talented-cute-redhead-woman-thinking-what-draw-holding-colored_1258-139128.jpg?w=1380&t=st=1693145800~exp=1693146400~hmac=a046b30f2d99b76756ecc7b14fbe1dfc7805e1a2760d39073122cf8f50e05f73);
+    background-size: cover;
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.choose .why {
+    color: black;
+    margin-top: 120px;
+    float: left;
+    margin-left: 10%;
+    font-size: 35px;
+}
+
+.choose .lin2 {
+    color: khaki;
+    float: left;
+    margin-top: 180px;
+    margin-left: -265px;
+
+}
+
+.spp {
+    position: absolute;
+    top: 30%;
+    margin-left: 50px;
+}
+
+.spp h2 {
+    color: #000;
+    font-size: 25px;
+    margin-top: 30px;
+    padding-right: 40%;
+}
+
+.spp p {
+    color: #000;
+    font-size: 30px;
+}
+
+.oli {
+    list-style-type: none;
+    margin-top: 50px;
+    margin-left: 20%;
+}
+
+.oli li {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.oli li:hover {
+    background-color: #f75394;
+}
+
+.fixed {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-image: url(https://img.freepik.com/free-photo/fashion-beauty-concept-close-up-elegant-woman-with-red-lips-makeup-earrings-looking-camera-self-assured-standing-white-background_1258-41288.jpg?w=996&t=st=1693145607~exp=1693146207~hmac=55dce6553d9a27bbc9b0c1c2dcede18b487ce02627b644fcd0a29ef076f04e1c);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.fixed-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.fixed-item {
+    margin-left: 15%;
+    margin-top: 5%;
+
+}
+
+.client:hover {
+    background-color: rgba(211, 211, 211, 0.496);
+}
+
+.client {
+    z-index: 1;
+    color: white;
+    opacity: 1;
+    display: inline-block;
+    padding: 35px;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.client i {
+    font-size: 30px;
+    color: rgb(2, 2, 100);
+}
+
+.client h2 {
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+.pricing {
+    margin-top: 150px;
+    margin-bottom: 100px;
+   
+}
+.pricing-items{
+    margin-top: 50px;
+    margin-left: 140px;
+}
+
+.tab {
+    width: 25%;
+    height: 48vh;
+    border: 2px solid lightgrey;
+    text-align: center;
+    position: relative;
+    padding: 20px 20px 50px;
+    margin-left: 60px;
+    display: inline-block;
+
+}
+
+.tab h2 {
+    font-weight: 300;
+    color: deepskyblue;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+.tab .hee {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #f75394;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.hee p {
+    font-size: 50px;
+    margin-bottom: 10px;
+    position: absolute;
+    font-weight: bold;
+    bottom: 15px;
+    left: 20px;
+}
+
+.hee .ll {
+    position: absolute;
+    top: 57px;
+    left: 11px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #f75394;
+    color: aliceblue;
+    padding: 7px 15px;
+    border: 2px solid #f75394;
+    font-size: 17px;
+}
+.ol-price{
+    list-style: none;
+}
+.ol-price li{
+    padding: 5px;
+    font-size: 18px;
+    color: deepskyblue;
+}
+
+.tab::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.8s;
+}
+
+.tab:hover::after {
+    height: 100%;
+}
+
+.tab:hover .hee {
+    color: blueviolet;
+    border: 2px solid yellow;
+}
+
+.tab:hover h2 {
+    color: blueviolet;
+}
+.team{
+    background-image: url(https://img.freepik.com/free-photo/diverse-hands-united-teamwork-concept_53876-143284.jpg?w=996&t=st=1693146365~exp=1693146965~hmac=873ac9431c88871e9981e24a107d18411fb0619324a73b490ba5e7979c354f18);
+}
+.person{
+    width: 40%;
+    display: inline-block;
+}
+.person .img1{
+    width: 100px;
+    border: 2px solid rgb(159, 158, 158);
+    border-radius: 50%;
+    height:90px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}
+.person .img2{
+    width: 100px;
+    border: 2px solid rgb(159, 158, 158);
+    border-radius: 50%;
+    height:90px;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+}
+.person .person-name{
+   text-align: center;
+   margin-left: 180px;
+   margin-top: 16%;
+   text-transform: capitalize;
+   color:#fff;
+   font-size: 25px;
+}
+.person .person-work{
+    text-align: center;
+    margin-left: 180px;
+  margin-top: 5px;
+    font-weight: 600;
+    color:orange;
+    font-size: 22px;
+}
+.person .person-attr{
+    
+    margin-left: 320px;
+    margin-top: 20px;
+    color: lavenderblush;
+    
+}
+.our-team{
+    margin-top: 150px;
+    height: 75vh;
+    background-color: lavender;
+}
+.teamm {
+    width: 85%;
+    margin-top: 20px;
+    float: left;
+    margin-left: 10%;
+}
+.teamm .team-person{
+width: 25%;
+height: 42vh;
+text-align: center;
+border: 2px solid black;
+display: inline-block;
+margin-left:50px;
+position: relative;
+}
+.team-person img{
+    width: 60%;
+   
+}
+.team-person h2{
+   text-transform: capitalize; 
+    color: #f75394;
+}
+.team-person h3{
+    margin-top: 10px;
+    text-transform: uppercase;
+    color:grey;
+}
+
+.team-person::after{
+    content: "";
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.8s;
+}
+.team-person:hover::after {
+    height: 100%;
+}
+.team-person:hover h2 {
+    color: blueviolet;
+    
+}
+
+.team-person:hover h3 {
+    color: blueviolet;
+}
+.team-img{
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+.team-overlay{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity:0;
+}
+.team-person:hover .team-overlay{
+    visibility: visible;
+    opacity: 0.5;
+}
+.team-overlay a {
+    display: block;
+    width: 40px;
+    height:40px;
+    background-color: #f75394;
+    color:#fff;
+}
+.team-overlay a i{
+    line-height: 40px;
+}
+.new{
+    margin-top: 150px;
+}
+.new .new-item{
+    width:80% ;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.new-item .itemm{
+    width: 26%;
+    border: 2px solid lavender;
+    height: 70vh;
+    padding: 10px;
+    display: inline-block;
+    margin-left: 50px;
+    text-align: center;
+    position: relative;
+}
+.itemm img{
+    width: 70%;
+margin-left: 20px;
+}
+.itemm ul{
+    list-style: none;
+}
+.itemm ul li{
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.itemm ul li i{
+    color: #f75394;
+}
+.itemm h2{
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: gray;
+}
+.itemm p{
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 5px;
+}
+.itemm a{
+    text-decoration: none;
+    color: darkblue;
+    font-size: 20px;
+    margin-top: 0px;
+    text-align: center;
+    text-transform: capitalize;
+    
+}
+.itemm::after{
+        content: "";
+        width: 100%;
+        height: 0;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-color: rgb(154, 191, 203);
+        transition: 0.8s; 
+        opacity: 0.4;
+}
+.itemm:hover::after{
+    height: 100%;
+}
+.footer{
+    background-color: gainsboro;
+    height: 40vh;
+  
+}
+.footer .foot {
+    margin-top: 20px;
+        text-align: center;
+        
+        position: relative;
+
+}
+.footer .foot h1{
+color: navy;
+position: absolute;
+bottom:-100px;
+left: 45%;
+}
+.footer .foot-link{
+    list-style: none;
+     position: absolute;
+bottom:-150px;
+left: 43%;
+}
+.footer .foot-link li{
+    display: inline-block;
+    padding: 10px;
+}
+.footer .foot-link li i{
+    font-size: 20px;
+}
+.fa-facebook{
+    color: blue;
+}
+.fa-instagram{
+    color: rgb(117, 0, 128);
+}
+.fa-twitter{
+    color: rgb(21, 130, 198);
+}
+.fa-linkedin{
+    color: navy;
+}
+.fa-google{
+    color: red;
+}
+</style>
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://deeplor.s3.us-west-2.amazonaws.com/matting/2023/08/27/e6b6d8c3d9ca4f0cbfed2fe2c9dfd831.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230827T142240Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=AKIAROYXHKZUSZONTWIG%2F20230827%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=f09d85d4c33fb918cd627b7ed7ead612c467985979905d05261e0232b879a460" alt="" srcset="">
+        <div class="Links">
+            <ol class="link-i">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#" class="hover">about</a></li>
+                <li><a href="#" class="hover">portfolio</a></li>
+                <li><a href="#" class="hover">service</a></li>
+                <li><a href="#" class="hover">price</a></li>
+                <li><a href="#" class="hover">team</a></li>
+                <li><a href="#" class="hover">blog</a> </li>
+                <li><a href="#" class="hover">contact</a></li>
+
+            </ol>
+        </div><!--links-->
+    </div><!--header-->
+    <div class="clear"></div>
+    <div class="middle">
+        <div class="middle-overlay">
+            <div class="middle-content">
+                <h1 class="title1">we are creative agency</h1>
+                <p class="paragraph1">The charming world of women, the world of jewelry
+                </p>
+                <button class="btn-get">Get Started!</button>
+                <button class="btn-learn">Learn more</button>
+            </div><!--middle-content-->
+        </div><!--middle-overlay-->
+    </div><!---middle-->
+    <div class="container">
+        <h1 class="title">Welcome To Our Website</h1>
+        <div class="line"></div>
+        <div class="container-items">
+            <div class="item necklace">
+                <div class="item-overlay2">
+                    <div class="item-content">
+                        <h2>neck chains</h2>
+                        <p>Neck chains will make your look cool</p>
+                        <a href="#">See more chains</a>
+                    </div><!--item-content-->
+                </div>
+            </div><!--item necklace-->
+            <div class="item earing">
+                <div class="item-overlay2">
+                    <div class="item-content item1">
+                        <h2>earings</h2>
+                        <p>Neck chains will make your look cool</p>
+                        <a href="#">See more chains</a>
+                    </div><!--item-content-->
+                </div>
+            </div><!--item earing-->
+            <div class="item rings">
+                <div class="item-overlay2">
+                    <div class="item-content">
+                        <h2>rings</h2>
+                        <p>Neck chains will make your look cool</p>
+                        <a href="#">See more chains</a>
+                    </div><!--item-content-->
+                </div>
+            </div><!--item necklace-->
+        </div>
+    </div><!--container-->
+    <div class="products">
+        <h1 class="title" style="color: white;">our products</h1>
+        <div class="line"></div>
+        <div class="product-content">
+            <div class="prod" id="pro1">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-bottom">
+                    <h2>Paerl Bracelets</h2>
+                    <p>Dainty Pearl Bracelet for Women</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <div class="prod" id="pro2">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-bottom">
+                    <h2>Rings<br> sliver</h2>
+                    <p> Beautiful Ring Options for Women</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <div class="prod" id="pro3">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-bottom">
+                    <h2>golden <br>earing</h2>
+                    <p> An earring that decorates your ears with something trendy, fun and cool.</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+
+            <div class="prod" id="pro4">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-bottom">
+                    <h2>Elegant gold anklet</h2>
+                    <p>Yellow Gold Fashionable Collar Anklet Embellished Jewelry</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <div class="prod" id="pro5">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-bottom">
+                    <h2>Butterfly Charm Necklace</h2>
+                    <p> Gold Fashionable Plastic Pendant Necklaces Embellished Jewelry</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+            <div class="prod" id="pro6">
+                <div class="overlay2"></div>
+                <div class="content-details  overlay-right">
+                    <h2 style="color: white;">Oyster Shell Necklace</h2>
+                    <p> Beautiful Ring Options for Women</p>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!--product-content-->
+    </div><!--products-->
+    <div class="offer">
+        <h1 class="title">what we offer</h1>
+        <div class="line"></div>
+        <div class="offer-content">
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> rings </h2>
+                <p>Put your finger on the latest women's rings from our jewelry collections .</p>
+            </div>
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> necklace </h2>
+                <p>Find the perfect update to your jewelry box in our women's necklaces here!.</p>
+            </div>
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> earing </h2>
+                <p> Bring the impact with our range bold earrings </p>
+            </div>
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> Bracelet</h2>
+                <p> Our women's bracelets are perfect for bringing something special to your look</p>
+            </div>
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> Pearl jewelry </h2>
+                <p>Make a statement with pearl earrings are must have in any jewellery box </p>
+            </div>
+            <div class="content">
+                <i class="fas fa-gem"></i>
+                <h2 class="acc"> Anklet</h2>
+                <p>Discover our delicate women's anklets that will bring fun to every outfit</p>
+            </div>
+
+        </div><!--offer-content-->
+    </div><!--offer-->
+
+    <div class="choose">
+        <h1 class="title why">why choose us</h1>
+        <div class="line lin2"></div>
+        <div class="spp">
+            <h2 class="simply">We are lucky that you chose us , Simply put, the service we offer is unparalleled.Our
+                consulting agency provides consulting, ideas, and resources for people working to create social change.
+                We bring the right people together to challenge established thinking and drive transformation. We work
+                with our clients to build the capabilities that enable organizations to achieve sustainable advantage.
+            </h2>
+            <ol class="oli">
+                <li style="background-color: #f75394;"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div><!--choose-->
+    <div class="fixed">
+        <div class="fixed-overlay">
+            <div class="fixed-item">
+                <div class="client">
+                    <i class="fas fa-users"></i>
+                    <h1>128K</h1>
+                    <h2>happy clients</h2>
+                </div>
+                <div class="client">
+                    <i class="fa-regular fa-gem"></i>
+                    <h1>10K</h1>
+                    <h2>our products</h2>
+                </div>
+                <div class="client">
+                    <i class="fa-solid fa-store"></i>
+                    <h1>12</h1>
+                    <h2>store</h2>
+                </div>
+                <div class="client">
+                    <i class="fa-solid fa-globe"></i>
+                    <h1>10</h1>
+                    <h2>Countries</h2>
+                </div>
+            </div>
+        </div>
+    </div><!--fixed-->
+    <div class="pricing">
+        <h1 class="title table">pricing table</h1>
+        <div class="line"></div>
+        <div class="pricing-items">
+            <div class="tab">
+                <h2>Basic plan</h2>
+                <div class="hee">
+                    <p>$9 </p>
+                    <p class="ll">month</p>
+                </div><!--h1-->
+                <br>
+                <ol class="ol-price">
+                    <li>1gb disk space</li>
+                    <li>100 email account</li>
+                    <li>24/24 support</li>
+                </ol>
+
+                <button>purchase now</button>
+            </div>
+            <div class="tab">
+                <h2>Basic plan</h2>
+                <div class="hee">
+                    <p>$9 </p>
+                    <p class="ll">month</p>
+                </div><!--h1-->
+                <br>
+                <ol class="ol-price">
+                    <li>1gb disk space</li>
+                    <li>100 email account</li>
+                    <li>24/24 support</li>
+                </ol>
+
+                <button>purchase now</button>
+            </div>
+            <div class="tab">
+                <h2>Basic plan</h2>
+                <div class="hee">
+                    <p>$9 </p>
+                    <p class="ll">month</p>
+                </div><!--h1-->
+                <br>
+                <ol class="ol-price">
+                    <li>1gb disk space</li>
+                    <li>100 email account</li>
+                    <li>24/24 support</li>
+                </ol>
+
+                <button>purchase now</button>
+            </div>
+        </div>
+    </div><!--pricing-->
+
+    <div class="fixed team">
+        <div class="fixed-overlay">
+            <div class="fixed-person">
+                <div class="person">
+                    <img class="img1" src="https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?w=740&t=st=1693143651~exp=1693144251~hmac=5207ca47c94ae1538462b2701ccac99591cc238e52ed2a47bd55354ea478e029" alt="">
+                    <h2 class="person-name">sara Adam</h2>
+                    <h3 class="person-work">CEO</h3>
+                    <p class="person-attr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+                        excepturi optio consequuntur adipisci </p>
+                </div><!--per1-->
+                <div class="person">
+                    <img class="img2"
+                        src="https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=996&t=st=1693143528~exp=1693144128~hmac=c85ffd2a269d03544ac8a06751fa423b7966a05531e350f73c4c035705eeec61"
+                        alt="">
+                    <h2 class="person-name">mary adam</h2>
+                    <h3 class="person-work"> Director</h3>
+                    <p class="person-attr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+                        excepturi optio consequuntur adipisci </p>
+                </div><!--per1-->
+            </div><!---fixed person-->
+        </div><!--fixed-overlay-->
+    </div><!--team-->
+    <div class="our-team">
+        <h1 class="title">our team</h1>
+        <div class="line"></div>
+        <div class="teamm">
+            <div class="team-person">
+                <div class="team-img">
+                    <img src="https://img.freepik.com/free-photo/image-confident-brunette-female-model-girl-looks-assertive-ready-cross-arms-chest-like-professional-smiling-smug-face-standing-white-background_176420-47089.jpg?w=996&t=st=1693143041~exp=1693143641~hmac=ab6a131a23a997fe1711154584b90d5b029fec0a8024130d440e65369d55a349" alt="">
+                <div class=" team-overlay">
+                    <a href="#"> <i class="fab fa-facebook-square"></i> </a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"> <i class="fab fa-linkedin"></i> </a>
+                </div>
+            </div><!--team-person-->
+            <h2>mayan noel</h2>
+            <h3>assistant</h3>
+        </div>
+
+        <div class="team-person">
+            <div class="team-img">
+                <img src="https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg?w=996&t=st=1693143452~exp=1693144052~hmac=42c655582ec9054bebb2031bf699528b45ebce6bf97b6f7386cc7237e3384496
+                    ">
+                <div class="team-overlay">
+                    <a href="#"> <i class="fab fa-facebook-square"></i> </a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"> <i class="fab fa-linkedin"></i> </a>
+                </div>
+            </div>
+            <h2>alex wern</h2>
+            <h3>assistant</h3>
+        </div>
+
+        <div class="team-person">
+            <div class="team-img">
+                <img src="https://img.freepik.com/free-photo/image-confident-brunette-female-model-girl-looks-assertive-ready-cross-arms-chest-like-professional-smiling-smug-face-standing-white-background_176420-47089.jpg?w=996&t=st=1693143041~exp=1693143641~hmac=ab6a131a23a997fe1711154584b90d5b029fec0a8024130d440e65369d55a349 alt="">
+            <div class=" team-overlay">
+                <a href="#"> <i class="fab fa-facebook-square"></i> </a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"> <i class="fab fa-linkedin"></i> </a>
+            </div>
+        </div>
+        <h2>malak noel</h2>
+        <h3>assistant</h3>
+           </div><!--our-team-->
+        </div>
+    </div>
+    <div class="new">
+        <h1 class="title">Recent news</h1>
+        <div class="line"></div>
+        <div class="new-item">
+            <div class="itemm">
+                <img src="https://i.pinimg.com/564x/ef/d1/1e/efd11e74fc61cda322c7f4cc83bc7ee6.jpg" alt="">
+                <ul>
+                    <li><i class="fa-regular fa-calendar-days"></i>16 Dec</li>
+                    <li><i class="fa-regular fa-comments"></i>55</li>
+                </ul>
+                <h2>the loly nackles</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore aspernatur error, placeat quisquam nulla at eum veritatis aliquam?!</p><br><br>
+                <a href="#">read more</a>
+            </div>
+            <div class="itemm">
+                <img src="https://i.pinimg.com/564x/ef/d1/1e/efd11e74fc61cda322c7f4cc83bc7ee6.jpg" alt="">
+                <ul>
+                    <li><i class="fa-regular fa-calendar-days"></i>16 Dec</li>
+                    <li><i class="fa-regular fa-comments"></i>55</li>
+                </ul>
+                <h2>the loly nackles</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore aspernatur error, placeat quisquam nulla at eum veritatis aliquam?!</p><br><br>
+                <a href="#">read more</a>
+            </div>
+            <div class="itemm">
+                <img src="https://i.pinimg.com/564x/ef/d1/1e/efd11e74fc61cda322c7f4cc83bc7ee6.jpg" alt="">
+                <ul>
+                    <li><i class="fa-regular fa-calendar-days"></i>16 Dec</li>
+                    <li><i class="fa-regular fa-comments"></i>55</li>
+                </ul>
+                <h2>the loly nackles</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore aspernatur error, placeat quisquam nulla at eum veritatis aliquam?!</p><br><br>
+                <a href="#">read more</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="foot">
+            <h1>contact us</h1>
+             <ol class="foot-link">
+            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href=""></a><i class="fa-brands fa-linkedin"></i></li>
+            <li><a href=""></a><i class="fa-brands fa-google"></i></li></ol>
+        
+       </div>
+    </div>
+</body>
+
+</html>
